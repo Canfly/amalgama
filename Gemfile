@@ -10,48 +10,38 @@ gem 'actionpack-action_caching'
 gem 'actionpack-page_caching'
 
 # Appserver
-
 gem 'unicorn', '4.8.3', :require => false
 
 # API and JSON
-
 gem 'acts_as_api', '0.4.2'
 gem 'json',        '1.8.1'
 
 # Authentication
-
 gem 'devise', '3.3.0'
 gem 'devise_lastseenable', '0.0.4'
 
 # Captcha
-
 gem 'simple_captcha2', '0.3.2', :require => 'simple_captcha'
 
 # Background processing
-
 gem 'sidekiq', '3.2.5'
 gem 'sinatra', '1.3.3'
 
 # Compression
-
 gem 'uglifier', '2.5.3'
 
 # Configuration
-
 gem 'configurate', '0.0.8'
 
 # Cross-origin resource sharing
-
 gem 'rack-cors', '0.2.9', :require => 'rack/cors'
 
 # CSS
-
 gem 'bootstrap-sass', '2.3.2.2'
 gem 'compass-rails',  '2.0.0'
 gem 'sass-rails',     '4.0.3'
 
 # Database
-
 ENV['DB'] ||= 'mysql'
 
 gem 'mysql2', '0.3.16' if ENV['DB'] == 'all' || ENV['DB'] == 'mysql'
@@ -61,7 +51,6 @@ gem 'activerecord-import', '0.5.0'
 gem 'foreigner',           '1.6.1'
 
 # File uploading
-
 gem 'carrierwave', '0.10.0'
 gem 'fog',         '1.23.0'
 gem 'mini_magick', '3.8.1'
@@ -71,11 +60,9 @@ gem 'remotipart',  '1.2.1'
 gem 'uuid', '2.3.7'
 
 # Icons
-
 gem 'entypo-rails', '2.2.2'
 
 # JavaScript
-
 gem 'backbone-on-rails',   '1.1.1'
 gem 'handlebars_assets',   '0.18.0'
 gem 'jquery-rails',        '3.1.2'
