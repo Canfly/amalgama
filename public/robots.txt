@@ -6,5 +6,4 @@
 
 # To ban all spiders from only specific directories such as /people /u or /tag etc.  
 User-Agent: *
-Disallow: /people/
-Disallow: /u/
+Disallow: /

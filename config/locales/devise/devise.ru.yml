@@ -33,7 +33,7 @@ ru:
       inviter:
         accept_at: "в %{url}, вы можете принять его по ссылке ниже."
         has_invited_you: "%{name}"
-        have_invited_you: "%{names} приглашает вас вступить в Диаспору"
+        have_invited_you: "%{names} приглашает вас вступить в Canfly"
       reset_password_instructions:
         change: "Изменить пароль"
         ignore: "Если вы не совершали запрос, проигнорируйте это письмо."
