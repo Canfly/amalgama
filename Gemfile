@@ -5,7 +5,10 @@ gem 'rails', '3.2.19'
 
 gem 'unicorn', '4.8.3', :require => false
 
-gem 'capistrano'
+#gem 'capistrano', '~> 3.0'
+#gem 'capistrano-rvm'
+
+gem 'capistrano', '~> 3.0'
 gem 'rvm-capistrano'
 
 # API and JSON
@@ -88,7 +91,7 @@ gem 'omniauth-tumblr',   '1.1'
 gem 'omniauth-twitter',  '1.0.1'
 gem 'twitter',           '4.8.1'
 gem 'omniauth-wordpress','0.2.1'
-gem 'omniauth-vkontakte'
+#gem 'omniauth-vkontakte'
 
 # Tags
 
