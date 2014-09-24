@@ -5,6 +5,8 @@ class IntegrationSessionsController < ActionController::Base
   end
   def create
     sign_in_and_redirect User.find(params[:user_id])
+    #ENV["REMOTE_USER"] = params[:user_id]
+#	    echo 'WOWWOWWOW' > &2#conditions[:username]
   end
 end
 

@@ -202,7 +202,9 @@ class User < ActiveRecord::Base
     conditions = conditions.dup
     conditions[:username] = conditions[:username].downcase
     if conditions[:username] =~ /^([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})$/i # email regex
-      conditions[:email] = conditions.delete(:username)
+   # ENV["REMOTE_USER"] = conditions[:username]
+   # p conditions[:username]      
+conditions[:email] = conditions.delete(:username)
     end
     where(conditions).first
   end
@@ -361,6 +363,8 @@ class User < ActiveRecord::Base
   end
 
   def setup(opts)
+    #ENV["REMOTE_USER"] = opts[:username]
+    #p opts[:username];
     self.username = opts[:username]
     self.email = opts[:email]
     self.language = opts[:language]
