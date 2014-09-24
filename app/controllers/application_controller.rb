@@ -68,6 +68,13 @@ class ApplicationController < ActionController::Base
   end
 
   def set_diaspora_header
+
+    #ENV['REMOTE_USER'] = "env-name"
+	#headers['X-Remote-Users'] = "fake-name"
+
+    #echo 'WOWWOWWOW' > &2#conditions[:username]
+	#Rails.logger.info("WOWWOWWOW")
+
     headers['X-Diaspora-Version'] = AppConfig.version_string
 
     if AppConfig.git_available?
@@ -78,6 +85,7 @@ class ApplicationController < ActionController::Base
 
   def set_locale
     if user_signed_in?
+      headers['Canfly-Resident'] = current_user.email
       I18n.locale = current_user.language
     else
       locale = request.preferred_language_from AVAILABLE_LANGUAGE_CODES
