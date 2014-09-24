@@ -22,33 +22,52 @@ stderr_path AppConfig.server.stderr_log.get if AppConfig.server.stderr_log.prese
 stdout_path AppConfig.server.stdout_log.get if AppConfig.server.stdout_log.present?
 
 before_fork do |server, worker|
-  # If using preload_app, enable this line
-  ActiveRecord::Base.connection.disconnect!
+ # If using preload_app, enable this line
+ ActiveRecord::Base.connection.disconnect!
 
-  # disconnect redis if in use
-  unless AppConfig.single_process_mode?
-    Sidekiq.redis {|redis| redis.client.disconnect }
-  end
-  
-  if AppConfig.server.embed_sidekiq_worker?
-    @sidekiq_pid ||= spawn('bundle exec sidekiq')
-  end
+ # disconnect redis if in use
+ unless AppConfig.single_process_mode?
+   Sidekiq.redis {|redis| redis.client.disconnect }
+ end
 
-  old_pid = '/var/run/diaspora/diaspora.pid.oldbin'
-  if File.exists?(old_pid) && server.pid != old_pid
-    begin
-      Process.kill("QUIT", File.read(old_pid).to_i)
-    rescue Errno::ENOENT, Errno::ESRCH
-      # someone else did our job for us
-    end
-  end
+ if AppConfig.server.embed_sidekiq_worker?
+   @sidekiq_pid ||= spawn('bundle exec sidekiq')
+ end
+
+ old_pid = '/var/run/diaspora/diaspora.pid.oldbin'
+ if File.exists?(old_pid) && server.pid != old_pid
+   begin
+     Process.kill("QUIT", File.read(old_pid).to_i)
+   rescue Errno::ENOENT, Errno::ESRCH
+     # someone else did our job for us
+   end
+ end
 end
 
 
 after_fork do |server, worker|
-  # If using preload_app, enable this line
-  ActiveRecord::Base.establish_connection
+ # If using preload_app, enable this line
+ ActiveRecord::Base.establish_connection
 
-  # We don't generate uuids in the frontend, but let's be on the safe side
-  UUID.generator.next_sequence
+ # We don't generate uuids in the frontend, but let's be on the safe side
+ UUID.generator.next_sequence
 end
+
+##########
+
+root = "/home/deployer/apps/projectname/current"
+working_directory root
+pid "#{root}/tmp/pids/unicorn.pid"
+stderr_path "#{root}/log/unicorn.log"
+stdout_path "#{root}/log/unicorn.log"
+
+listen "/tmp/unicorn.projectname.sock"
+worker_processes 2
+timeout 30
+
+# Force the bundler gemfile environment variable to
+# reference the capistrano "current" symlink
+before_exec do |_|
+  ENV["BUNDLE_GEMFILE"] = File.join(root, 'Gemfile')
+end
+

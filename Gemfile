@@ -5,6 +5,9 @@ gem 'rails', '3.2.19'
 
 gem 'unicorn', '4.8.3', :require => false
 
+gem 'capistrano'
+gem 'rvm-capistrano'
+
 # API and JSON
 
 gem 'acts_as_api', '0.4.2'
