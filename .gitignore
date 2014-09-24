@@ -69,5 +69,3 @@ dump.rdb
 
 #IDE
 diaspora.iml
-Gemfile.lock
-config/database.yml
