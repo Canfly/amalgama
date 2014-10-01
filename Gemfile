@@ -6,10 +6,11 @@ gem 'rails', '3.2.19'
 gem 'unicorn', '4.8.3', :require => false
 
 #gem 'capistrano', '~> 3.0'
-#gem 'capistrano-rvm'
-
-gem 'capistrano', '~> 3.0'
-gem 'rvm-capistrano'
+gem 'capistrano', '~> 3.1.0'
+gem 'capistrano-bundler', '~> 1.1.2'
+gem 'capistrano-rails', '~> 1.1.1'
+gem 'capistrano-rvm'
+#gem 'rvm-capistrano'
 
 # API and JSON
 
