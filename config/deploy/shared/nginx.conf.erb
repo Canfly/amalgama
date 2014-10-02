@@ -78,12 +78,12 @@ http {
     pagespeed StatisticsLogging on;
     pagespeed LogDir /var/log/pagespeed;
     
-    #passenger_root /home/hustlr/.rvm/gems/ruby-2.0.0-p576/gems/passenger-4.0.53;
-    #passenger_ruby /home/hustlr/.rvm/gems/ruby-2.0.0-p576/wrappers/ruby;
+    passenger_root /home/hustlr/.rvm/gems/ruby-2.0.0-p576/gems/passenger-4.0.53;
+    passenger_ruby /home/hustlr/.rvm/gems/ruby-2.0.0-p576/wrappers/ruby;
     
-    upstream diaspora {
-      server          127.0.0.1:3000;
-    }
+    #upstream diaspora {
+    #  server          127.0.0.1:3000;
+    #}
 
     server {
         listen              80;
@@ -92,9 +92,10 @@ http {
     }
 
     server {
-      #passenger_enabled on;
-      #rails_env    production;
-
+      passenger_enabled on;
+      rails_env    production;
+      passenger_friendly_error_pages on;
+      
       listen 443 ssl spdy;
       server_name <%= fetch(:server_name) %>;
 
@@ -118,18 +119,18 @@ http {
       }
 
 
-  try_files $uri @diaspora;
+ # try_files $uri @diaspora;
 
 
 
-  location @diaspora {
-    proxy_set_header X-Real-IP $remote_addr;
-    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-    proxy_set_header X-Forwarded-Proto https;
-    proxy_set_header Host $http_host;
-    proxy_redirect off;
-    proxy_pass http://diaspora;
-  }
+  #location @diaspora {
+  #  proxy_set_header X-Real-IP $remote_addr;
+  #  proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+  #  proxy_set_header X-Forwarded-Proto https;
+  #  proxy_set_header Host $http_host;
+  #  proxy_redirect off;
+  #  proxy_pass http://diaspora;
+  #}
 
       error_page 500 502 503 504 /500.html; 
 
