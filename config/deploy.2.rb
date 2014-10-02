@@ -10,7 +10,7 @@ set :deploy_to, "/home/#{user}/#{application}" # Directory in which the deployme
 set :deploy_via, :remote_cache
 set :use_sudo, false
 
-set :scm, "git"
+set :scm, "git" 
 set :repository, "git@github.com:Canfly/#{application}.git"
 set :branch, "master"
 
