@@ -1,0 +1,118 @@
+# Canfly Diaspora
+# hustlr deploy 
+# nginx + page_speed
+# + passenger
+# - unicorn
+# 2014 10 02
+
+user www-data www-data;
+pid /var/run/nginx.pid;
+worker_processes 1;
+
+events {
+    worker_connections  1024;
+    multi_accept on;
+    use epoll;
+}
+
+
+http {
+
+    server_tokens off;
+    include       mime.types;
+    default_type  application/octet-stream;
+
+    index index.html default.html;
+  
+    log_format  main  '$remote_addr - $upstream_http_canfly_resident [$time_local] "$request" '
+                      '$status $body_bytes_sent "$http_referer" '
+                      '"$http_user_agent" "$http_x_forwarded_for"';
+
+    access_log  /var/log/nginx/access.log  main;
+
+    sendfile on;
+    tcp_nopush on;
+    tcp_nodelay on;
+    keepalive_timeout 30;
+    types_hash_max_size 2048;
+    reset_timedout_connection on;
+    server_names_hash_bucket_size 64;
+    server_name_in_redirect off;
+
+    gzip on;
+    gzip_disable "msie6";
+    gzip_vary on;
+    gzip_proxied any;
+    gzip_min_length 256;
+    gzip_comp_level 4;
+    gzip_types text/plain text/css application/json application/x-javascript text/xml application/xml application/xml+rss text/javascript application/javascript text/x-js;
+
+    open_file_cache max=100000 inactive=20s;
+    open_file_cache_valid 30s;
+    open_file_cache_min_uses 2;
+    open_file_cache_errors on;
+
+    pagespeed on;
+    pagespeed FileCachePath /run/ngx_pagespeed;
+    pagespeed EnableFilters combine_css,combine_javascript;
+    pagespeed EnableFilters rewrite_images,rewrite_css,rewrite_javascript,inline_images,inline_css,recompress_jpeg,recompress_png,resize_images; #,prioritize_critical_css,collapse_whitespace;#,lazyload_images;
+    pagespeed EnableFilters collapse_whitespace;
+    pagespeed EnableFilters move_css_above_scripts;
+    pagespeed JpegRecompressionQuality 85;
+    pagespeed ImageRecompressionQuality 85;
+    pagespeed ImageInlineMaxBytes 2048;
+    pagespeed LowercaseHtmlNames on;
+    pagespeed FetchHttps enable;
+    pagespeed Domain https://canfly.org;
+    pagespeed Domain https://despora.de;
+    pagespeed Domain https://sechat.org;
+    pagespeed Domain https://diasp.eu;
+    pagespeed Domain code.jquery.com;
+    pagespeed Allow "*";
+    pagespeed GlobalAdminPath /dv;
+    pagespeed MessageBufferSize 10000;
+    pagespeed StaticAssetPrefix <%= fetch(:deploy_to) %>/current/public;
+    pagespeed LoadFromFile "https://canfly.org/assets/" "<%= fetch(:deploy_to) %>/current/public/assets/";
+    pagespeed LoadFromFile "https://canfly.org/uploads/" "<%= fetch(:deploy_to) %>/current/public/uploads/";
+    pagespeed Statistics on;
+    pagespeed StatisticsLogging on;
+    pagespeed LogDir /var/log/pagespeed;
+    
+    passenger_root /home/hustlr/.rvm/gems/ruby-2.0.0-p576/gems/passenger-4.0.53;
+    passenger_ruby /home/hustlr/.rvm/gems/ruby-2.0.0-p576/wrappers/ruby;
+    
+    server {
+        listen              80;
+        server_name <%= fetch(:server_name) %>  www.<%= fetch(:server_name) %>;
+        return 301 https://<%= fetch(:server_name) %>$request_uri ;
+    }
+
+    server {
+      passenger_enabled on;
+      rails_env    production;
+
+      listen 443 ssl spdy;
+      server_name <%= fetch(:server_name) %>;
+
+      client_max_body_size 5M;
+      ssl_certificate       ssl.crt;
+      ssl_certificate_key   ssl.key;
+      ssl_dhparam dhparam.pem;
+      ssl_protocols SSLv3 TLSv1 TLSv1.1 TLSv1.2;
+      ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:DHE-DSS-AES128-GCM-SHA256:kEDH+AESGCM:ECDHE-RSA-AES128-SHA256:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA:ECDHE-ECDSA-AES128-SHA:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA:ECDHE-ECDSA-AES256-SHA:DHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA:DHE-DSS-AES128-SHA256:DHE-RSA-AES256-SHA256:DHE-DSS-AES256-SHA:DHE-RSA-AES256-SHA:AES128-GCM-SHA256:AES256-GCM-SHA384:ECDHE-RSA-RC4-SHA:ECDHE-ECDSA-RC4-SHA:AES128:AES256:RC4-SHA:HIGH:!aNULL:!eNULL:!EXPORT:!DES:!3DES:!MD5:!PSK;
+      ssl_session_timeout 5m;
+      ssl_prefer_server_ciphers on;
+      ssl_session_cache shared:SSL:50m;
+
+      root <%= fetch(:deploy_to) %>/current/public;
+  
+      location /dv {
+          allow 127.0.0.1;
+          allow 95.27.85.128;
+          deny all;
+      }
+
+      error_page 500 502 503 504 /500.html; 
+
+    }
+}

@@ -8,7 +8,7 @@ set :stage, :production
 #role :app, %w{hustlr@canfly.org}
 #role :web, %w{hustlr@canfly.org}
 #role :db,  %w{hustlr@canfly.org}
-
+set :server_name, "canfly.org"
 # Extended Server Syntax
 # ======================
 # This can be used to drop a more detailed server
@@ -16,8 +16,8 @@ set :stage, :production
 # something that quacks like a hash can be used to set
 # extended properties on the server.
 #server 'example.com', user: 'deploy', roles: %w{web app}, my_property: :my_value
-server 'canfly.org', user: 'hustlr', roles: %w{web app},
-	ssh_options: {port: 28}
+#server 'canfly.org', user: 'hustlr', roles: %w{web app},
+#	ssh_options: {port: 28}
 # you can set custom ssh options
 # it's possible to pass any option but you need to keep in mind that net/ssh understand limited list of options
 # you can see them in [net/ssh documentation](http://net-ssh.github.io/net-ssh/classes/Net/SSH.html#method-c-start)
@@ -28,14 +28,14 @@ server 'canfly.org', user: 'hustlr', roles: %w{web app},
 #    auth_methods: %w(password)
 #  }
 # and/or per server
-# server 'example.com',
-#   user: 'user_name',
-#   roles: %w{web app},
-#   ssh_options: {
-#     user: 'user_name', # overrides user setting above
-#     keys: %w(/home/user_name/.ssh/id_rsa),
-#     forward_agent: false,
-#     auth_methods: %w(publickey password)
-#     # password: 'please use keys'
-#   }
+ server "canfly.org",
+   user: "#{fetch(:user)}",
+   roles: %w{web app},
+   ssh_options: {
+     user: "#{fetch(:user)}", # overrides user setting above
+     port: 28,
+     forward_agent: false,
+     auth_methods: %w(publickey)
+     # password: 'please use keys'
+   }
 # setting per server overrides global ssh_options
