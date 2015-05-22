@@ -81,3 +81,6 @@ diaspora.iml
 
 # Dolphin's directory's preferences files
 *.directory
+.sync
+
+config/initializers/secret_token.old

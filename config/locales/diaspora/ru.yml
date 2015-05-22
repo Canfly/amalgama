@@ -347,7 +347,7 @@ ru:
     helper:
       correct_the_following_errors_and_try_again: "Исправьте ошибки и попробуйте снова."
       invalid_fields: "Недействительные поля"
-    login_try_again: "Пожалуйста, %{login_link}<a href='%{login_link}'>войдите</a> и попробуйте снова."
+    login_try_again: "Пожалуйста, <a href='%{login_link}'>войдите</a> и попробуйте снова."
     post_not_public: "Запись, которую вы пытаетесь посмотреть, не публична!"
     post_not_public_or_not_exist: "Запись, которую вы хотите открыть не публичная или не существует!"
   fill_me_out: "Заполнить"

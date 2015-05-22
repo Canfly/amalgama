@@ -232,7 +232,12 @@ Diaspora::Application.routes.draw do
 
   #Statistics
   get :statistics, controller: :statistics
+<<<<<<< Updated upstream
 
+=======
+  get 'statistics_json' => redirect('/statistics.json')
+  
+>>>>>>> Stashed changes
   # Terms
   if AppConfig.settings.terms.enable?
     get 'terms' => 'terms#index'
