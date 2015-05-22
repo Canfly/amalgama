@@ -1,0 +1,20 @@
+2014 (c) Canfly, LLP
+2012 (c) DIASPORA, INC
+
+/* MAIN */
+  Adiom Timur
+  Twitter: @adiomtimur
+  iMessage: adiom@canfly.org
+  Location: Astrakhan, MSK, SPb
+ 
+/* SITE */
+  Last update: 17/12/2014
+  Twitter Bootstrap, jQuery, etc.
+  Ruby on Rails, nginx, percona mysql, etc
+
+/* SPECIAL THANKS */
+  https://diasporafoundation.org
+  Sublime Text 3
+  github 
+  yandex
+  selectel

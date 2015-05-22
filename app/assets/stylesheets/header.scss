@@ -4,28 +4,35 @@
 }
 
 body > header {
+<<<<<<< Updated upstream:app/assets/stylesheets/header.scss
   box-shadow: 0 1px 3px rgba(0,0,0,0.9);
   background: image-url('header-bg.png') rgb(40,35,35);
   z-index: 1001;
   padding: 6px 0;
   color: #CCC;
   height: 26px;
+=======
+  background: #448AFF;
+  z-index: 1228;
+  padding: 8px 0;
+  color: #ffff;
+  height: 34px;
+>>>>>>> Stashed changes:app/assets/stylesheets/header.css.scss
   position: fixed;
   width: 100%;
   min-width: 620px;
   top: 0;
   left: 0;
-  border-bottom: 1px solid #000;
-
+  
   > div > div.container {
-    height: 26px;
+    height: 34px;
   }
 
   .diaspora_header_logo {
-    float: left;
+   /* float: left;
     margin-top: -6px;
     height: 38px;
-    width: 65px;
+    width: 65px;*/
   }
 
   .ie-user-menu-active { height: 150px; }
@@ -36,6 +43,7 @@ body > header {
   }
 
   a {
+<<<<<<< Updated upstream:app/assets/stylesheets/header.scss
     color: #CCC;
     color: rgb(147,147,147);
 
@@ -47,6 +55,9 @@ body > header {
       outline: thin dotted $border-dark-grey;
       text-decoration: none;
     }
+=======
+    color: #fff;
+>>>>>>> Stashed changes:app/assets/stylesheets/header.css.scss
   }
 
   &.landing {
@@ -376,21 +387,19 @@ body > header {
     padding: 0;
 
     > li {
-      text-shadow: 0 1px 0 #000;
       display: inline;
       margin-right: 0.5em;
 
       a {
-        color: $blue;
+        color: $white;
 
         &.login {
+<<<<<<< Updated upstream:app/assets/stylesheets/header.scss
           border-radius: 5px;
           box-shadow: 0 1px 1px #666;
+=======
+>>>>>>> Stashed changes:app/assets/stylesheets/header.css.scss
           padding: 5px 8px;
-          background-color: #000;
-          border-top: 1px solid #000;
-
-          &:hover { background-color: #222; }
         }
  	  }
 
