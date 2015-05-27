@@ -1,21 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<!-- See man pages for webapp.plist(8) and webappctl(8) for information about this example webapp.plist -->
 <plist version="1.0">
-  <dict> 
-    <key>name</key>
-    <string>org.canfly.amalgama</string>
-    <key>displayName</key>
-    <string>Canfly Diaspora</string>
-    <key>includeFiles</key>
-    <array>
-      <string>/Users/adiom/Documents/Canfly/amalgama/public/httpd.conf</string>
-    </array>
-    <!-- <key>launchKeys</key> -->
-    <!-- <array> -->
-    <!--   <string>ca.sheepspace.jwc.node</string> -->
-    <!-- </array> -->
-    <key>sslPolicy</key>
-    <integer>0</integer>
-  </dict>
+<dict>
+	<key>name</key>
+	<string>org.canfly.amalgama</string>
+	<key>displayName</key>
+	<string>Canfly Diaspora</string>
+	<key>launchKeys</key>
+	<array/>
+	<key>includeFiles</key>
+	<array>
+		<string>/Users/adiom/Documents/Canfly/amalgama/public/httpd.conf</string>
+	</array>
+	<key>proxies</key>
+	<dict/>
+	<key>requiredModuleNames</key>
+	<array>
+		<string>mod_lbmethod_byrequests</string>
+		<string>mod_slotmem_shm</string>
+		<string>mod_rewrite</string>
+		<string>mod_headers</string>
+		<string>proxy_module</string>
+		<string>mod_proxy_http</string>
+		<string>mod_proxy_balancer</string>
+	</array>
+	<key>installationIndicatorFilePath</key>
+	<string>/Users/adiom/Documents/Canfly/amalgama/script/server</string>
+	<key>sslPolicy</key>
+	<integer>1</integer>
+</dict>
 </plist>

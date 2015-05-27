@@ -28,7 +28,7 @@ Diaspora::Application.configure do
   config.assets.digest = true
 
   # Specifies the header that your server uses for sending files
-  config.action_dispatch.x_sendfile_header = "X-Sendfile" # for apache
+  #config.action_dispatch.x_sendfile_header = "X-Sendfile" # for apache
   # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for nginx
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
@@ -66,7 +66,7 @@ Diaspora::Application.configure do
   config.active_support.deprecation = :notify
 
   # For nginx:
-  # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect'
+  config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect'
 
   if AppConfig.environment.assets.host.present?
     config.action_controller.asset_host = AppConfig.environment.assets.host.get
