@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!-- See man pages for webapp.plist(8) and webappctl(8) for information about this example webapp.plist -->
+<plist version="1.0">
+  <dict> 
+    <key>name</key>
+    <string>org.canfly.amalgama</string>
+    <key>displayName</key>
+    <string>Canfly Diaspora</string>
+    <key>includeFiles</key>
+    <array>
+      <string>/Users/adiom/Documents/Canfly/amalgama/public/httpd.conf</string>
+    </array>
+    <!-- <key>launchKeys</key> -->
+    <!-- <array> -->
+    <!--   <string>ca.sheepspace.jwc.node</string> -->
+    <!-- </array> -->
+    <key>sslPolicy</key>
+    <integer>0</integer>
+  </dict>
+</plist>

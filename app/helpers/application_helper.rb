@@ -12,8 +12,7 @@ module ApplicationHelper
   end
 
   def changelog_url
-    url = "https://github.com/diaspora/diaspora/blob/master/Changelog.md"
-    url.sub!('/master/', "/#{AppConfig.git_revision}/") if AppConfig.git_revision.present?
+    url = "https://canfly.org/u/server"
     url
   end
 

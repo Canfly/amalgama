@@ -4,10 +4,10 @@
 }
 
 body > header {
-  box-shadow: 0 1px 3px rgba(0,0,0,0.9);
+  
   background: #448AFF;
   z-index: 1001;
-  padding: 8px 0;
+  padding: 2px 0;
   color: #ffffff;
   height: 34px;
   position: fixed;
@@ -15,7 +15,6 @@ body > header {
   min-width: 620px;
   top: 0;
   left: 0;
-  border-bottom: 1px solid #000;
 
   > div > div.container {
     height: 26px;
@@ -36,13 +35,8 @@ body > header {
   }
 
   a {
-    color: #CCC;
-    color: rgb(147,147,147);
+    color: #fff;
 
-    &:hover, &:focus {
-      background: none;
-      color: $highlight-white;
-    }
     &:focus {
       outline: thin dotted $border-dark-grey;
       text-decoration: none;
@@ -357,9 +351,7 @@ body > header {
     > span {
       height: 100%;
       display: inline-block;
-      margin-left: -4px;
-      border-left: 1px solid #333;
-      border-right: 1px solid #333;
+
 
       &:last-child {
         margin-left: -5px;
@@ -376,21 +368,18 @@ body > header {
     padding: 0;
 
     > li {
-      text-shadow: 0 1px 0 #000;
       display: inline;
       margin-right: 0.5em;
 
       a {
-        color: $blue;
+        color: #448AFF;
 
         &.login {
-          border-radius: 5px;
-          box-shadow: 0 1px 1px #666;
-          padding: 5px 8px;
-          background-color: #000;
-          border-top: 1px solid #000;
-
-          &:hover { background-color: #222; }
+          border-radius: 1px;
+          /* box-shadow: 0 1px 1px #666; */
+          padding: 8px 8px;
+          background-color: #ffffff;
+          /*border-top: 1px solid #000;*/
         }
  	  }
 

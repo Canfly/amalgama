@@ -42,10 +42,10 @@ module OpenGraphHelper
     [
       *og_common_tags,
       og_type,
-      og_title('diaspora* social network'),
+      og_title('canfly diaspora*'),
       og_image,
       og_url(AppConfig.environment.url),
-      og_description('diaspora* is the online social world where you are in control.')
+      og_description('the media dimension for interactive interaction.')
     ].join("\n").html_safe
   end
 

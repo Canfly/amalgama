@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>EnvironmentVariables</key>
+	<dict>
+		<key>GEM_HOME</key>
+		<string>/Users/adiom/.rvm/gems/ruby-2.1.5@diaspora</string>
+		<key>GEM_PATH</key>
+		<string>/Users/adiom/.rvm/gems/ruby-2.1.5@diaspora:/Users/adiom/.rvm/gems/ruby-2.1.5@global</string>
+		<key>MY_RUBY_HOME</key>
+		<string>/Users/adiom/.rvm/rubies/ruby-2.1.5</string>
+		<key>PATH</key>
+		<string>/Users/adiom/.rvm/gems/ruby-2.1.5@diaspora/bin:/Users/adiom/.rvm/gems/ruby-2.1.5@global/bin:/Users/adiom/.rvm/rubies/ruby-2.1.5/bin:/Users/adiom/.rvm/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/Server.app/Contents/ServerRoot/usr/bin:/Applications/Server.app/Contents/ServerRoot/usr/sbin:/usr/local/MacGPG2/bin:/usr/local/mysql/bin</string>
+		<key>RUBY_VERSION</key>
+		<string>ruby-2.1.5</string>
+	</dict>
+	<key>GroupName</key>
+	<string>staff</string>
+	<key>InitGroups</key>
+	<true/>
+	<key>KeepAlive</key>
+	<false/>
+	<key>Label</key>
+	<string>org.canfly.rvm</string>
+	<key>Program</key>
+	<string>/Users/adiom/Documents/Canfly/amalgama/start</string>
+	<key>RunAtLoad</key>
+	<false/>
+	<key>StandardErrorPath</key>
+	<string>/Users/adiom/Documents/Canfly/amalgama/log/stderr</string>
+	<key>StandardOutPath</key>
+	<string>/Users/adiom/Documents/Canfly/amalgama/log/stdout</string>
+	<key>UserName</key>
+	<string>adiom</string>
+	<key>WorkingDirectory</key>
+	<string>/Users/adiom/Documents/Canfly/amalgama</string>
+</dict>
+</plist>
