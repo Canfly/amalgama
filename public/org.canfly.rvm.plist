@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>Disabled</key>
+	<true/>
 	<key>EnvironmentVariables</key>
 	<dict>
 		<key>GEM_HOME</key>
@@ -11,7 +13,7 @@
 		<key>MY_RUBY_HOME</key>
 		<string>/Users/adiom/.rvm/rubies/ruby-2.1.5</string>
 		<key>PATH</key>
-		<string>/Users/adiom/.rvm/gems/ruby-2.1.5@diaspora/bin:/Users/adiom/.rvm/gems/ruby-2.1.5@global/bin:/Users/adiom/.rvm/rubies/ruby-2.1.5/bin:/Users/adiom/.rvm/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/Server.app/Contents/ServerRoot/usr/bin:/Applications/Server.app/Contents/ServerRoot/usr/sbin:/usr/local/MacGPG2/bin:/usr/local/mysql/bin</string>
+		<string>/Users/adiom/.rvm/gems/ruby-2.1.5@diaspora/bin:/Users/adiom/.rvm/gems/ruby-2.1.5@global/bin:/Users/adiom/.rvm/rubies/ruby-2.1.5/bin</string>
 		<key>RUBY_VERSION</key>
 		<string>ruby-2.1.5</string>
 	</dict>

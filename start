@@ -1,9 +1,23 @@
-#!/bin/bash
-RAILS_ENV=production
-export RAILS_ENV
+#!/usr/bin/env bash
+
+#source ~/.profile
+source $HOME/.rvm/scripts/rvm
+rum use 2.1.5
+
+export RAILS_ENV=production
+
 export DYLD_LIBRARY_PATH=/usr/local/mysql/lib:$DYLD_LIBRARY_PATH
- # bin/bundle update
- #bin/rake assets:precompile
+
+# Output the current ruby version
+ruby -v
+ 
+# Display the information about the current environment, within this script.
+rvm info
+ 
+# Display the current rubygems directory for environment, within the script.
+rvm gemdir
+
+#bin/rake assets:precompile
 #echo "MySQL DUMP"
- #mysqldump diaspora_production > /Users/adiom/Documents/Canfly/backup/diaspora_production_(date +"%Y-%m-%d").sql
-./script/server 
+#mysqldump diaspora_production > /Users/adiom/Documents/Canfly/backup/diaspora_production_(date +"%Y-%m-%d").sql
+#./script/server 
