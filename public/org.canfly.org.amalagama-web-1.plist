@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Disabled</key>
+	<true/>
+	<key>EnvironmentVariables</key>
+	<dict>
+		<key>VAR</key>
+		<string>VAL</string>
+	</dict>
+	<key>KeepAlive</key>
+	<true/>
+	<key>Label</key>
+	<string>org.canfly.org.amalagama-web-1</string>
+	<key>ProgramArguments</key>
+	<array>
+		<string>rvm</string>
+		<string>use</string>
+		<string>2.1.5@diaspora</string>
+		<string>/Users/adiom/Documents/Canfly/amalgama/bin/bundle</string>
+		<string>exec</string>
+		<string>unicorn_rails</string>
+		<string>-c</string>
+		<string>config/unicorn.rb</string>
+		<string>-o</string>
+		<string>127.0.0.1</string>
+		<string>-p</string>
+		<string>3000</string>
+	</array>
+	<key>RunAtLoad</key>
+	<true/>
+	<key>StandardErrorPath</key>
+	<string>public/log/org.canfly.org.amalagama-web-1.log</string>
+	<key>StandardOutPath</key>
+	<string>public/log/org.canfly.org.amalagama-web-1.log</string>
+	<key>UserName</key>
+	<string>adiom</string>
+	<key>WorkingDirectory</key>
+	<string>/Users/adiom/Documents/Canfly/amalgama</string>
+</dict>
+</plist>

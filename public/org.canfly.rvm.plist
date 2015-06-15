@@ -3,20 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Disabled</key>
-	<true/>
-	<key>EnvironmentVariables</key>
-	<dict>
-		<key>GEM_HOME</key>
-		<string>/Users/adiom/.rvm/gems/ruby-2.1.5@diaspora</string>
-		<key>GEM_PATH</key>
-		<string>/Users/adiom/.rvm/gems/ruby-2.1.5@diaspora:/Users/adiom/.rvm/gems/ruby-2.1.5@global</string>
-		<key>MY_RUBY_HOME</key>
-		<string>/Users/adiom/.rvm/rubies/ruby-2.1.5</string>
-		<key>PATH</key>
-		<string>/Users/adiom/.rvm/gems/ruby-2.1.5@diaspora/bin:/Users/adiom/.rvm/gems/ruby-2.1.5@global/bin:/Users/adiom/.rvm/rubies/ruby-2.1.5/bin</string>
-		<key>RUBY_VERSION</key>
-		<string>ruby-2.1.5</string>
-	</dict>
+	<false/>
 	<key>GroupName</key>
 	<string>staff</string>
 	<key>InitGroups</key>
@@ -25,14 +12,16 @@
 	<false/>
 	<key>Label</key>
 	<string>org.canfly.rvm</string>
-	<key>Program</key>
-	<string>/Users/adiom/Documents/Canfly/amalgama/start</string>
+	<key>ProgramArguments</key>
+	<array>
+		<string>/Users/adiom/Documents/Canfly/amalgama/start</string>
+	</array>
 	<key>RunAtLoad</key>
-	<false/>
+	<true/>
 	<key>StandardErrorPath</key>
-	<string>/Users/adiom/Documents/Canfly/amalgama/log/stderr</string>
+	<string>/Users/adiom/Documents/stderr</string>
 	<key>StandardOutPath</key>
-	<string>/Users/adiom/Documents/Canfly/amalgama/log/stdout</string>
+	<string>/Users/adiom/Documents/stdout</string>
 	<key>UserName</key>
 	<string>adiom</string>
 	<key>WorkingDirectory</key>

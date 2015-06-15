@@ -148,7 +148,7 @@ GEM
       responders
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
-    devise-token_authenticatable (0.3.1)
+    devise-token_authenticatable (0.3.2)
       devise (~> 3.4.0)
     devise_lastseenable (0.0.4)
       devise
@@ -222,7 +222,7 @@ GEM
     fog-atmos (0.1.0)
       fog-core
       fog-xml
-    fog-aws (0.3.0)
+    fog-aws (0.4.0)
       fog-core (~> 1.27)
       fog-json (~> 1.0)
       fog-xml (~> 0.1)
@@ -238,13 +238,13 @@ GEM
       mime-types
       net-scp (~> 1.1)
       net-ssh (>= 2.1.3)
-    fog-ecloud (0.1.1)
+    fog-ecloud (0.1.3)
       fog-core
       fog-xml
-    fog-json (1.0.1)
+    fog-json (1.0.2)
       fog-core (~> 1.0)
-      multi_json (~> 1.0)
-    fog-profitbricks (0.0.2)
+      multi_json (~> 1.10)
+    fog-profitbricks (0.0.3)
       fog-core
       fog-xml
       nokogiri
@@ -328,7 +328,7 @@ GEM
       multi_json (~> 1.0)
       sprockets (~> 2.0)
       tilt (~> 1.2)
-    hashie (3.4.1)
+    hashie (3.4.2)
     hike (1.2.3)
     hiredis (0.5.2)
     hitimes (1.2.2)
@@ -391,11 +391,11 @@ GEM
     mime-types (2.6.1)
     mini_magick (4.2.0)
     mini_portile (0.6.2)
-    minitest (5.6.1)
+    minitest (5.7.0)
     mobile-fu (1.3.1)
       rack-mobile-detect
       rails
-    multi_json (1.11.0)
+    multi_json (1.11.1)
     multi_test (0.1.2)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
@@ -441,7 +441,7 @@ GEM
       faraday (~> 0.9.0)
       nokogiri (~> 1.6)
     orm_adapter (0.5.0)
-    parser (2.2.2.5)
+    parser (2.3.0.pre.2)
       ast (>= 1.1, < 3.0)
     phantomjs (1.9.8.0)
     powerpack (0.1.1)
@@ -505,7 +505,7 @@ GEM
       rails-assets-jquery
     rails-assets-jquery-ui (1.10.4)
       rails-assets-jquery (>= 1.6)
-    rails-assets-jquery.slimscroll (1.3.3)
+    rails-assets-jquery.slimscroll (1.3.6)
       rails-assets-jquery (>= 1.7)
     rails-assets-markdown-it--markdown-it-for-inline (0.1.0)
     rails-assets-markdown-it (4.2.0)

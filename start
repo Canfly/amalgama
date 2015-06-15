@@ -1,23 +1,22 @@
-#!/usr/bin/env bash
-
-#source ~/.profile
-source $HOME/.rvm/scripts/rvm
-rum use 2.1.5
+#!/bin/bash
+source /Users/adiom/.rvm/scripts/rvm
+source /Users/adiom/.bash_profile
+rvm use 2.1.5@diaspora
 
 export RAILS_ENV=production
 
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/MacGPG2/bin:/usr/local/mysql/bin:$PATH
 export DYLD_LIBRARY_PATH=/usr/local/mysql/lib:$DYLD_LIBRARY_PATH
 
-# Output the current ruby version
-ruby -v
- 
-# Display the information about the current environment, within this script.
-rvm info
- 
-# Display the current rubygems directory for environment, within the script.
-rvm gemdir
-
-#bin/rake assets:precompile
 #echo "MySQL DUMP"
 #mysqldump diaspora_production > /Users/adiom/Documents/Canfly/backup/diaspora_production_(date +"%Y-%m-%d").sql
 #./script/server 
+#bin/bundle update
+#bin/rake assets:precompile
+##sudo -iu adiom brew --env
+#echo $PATH
+#exec env
+cd /Users/adiom/Documents/Canfly/amalgama
+
+bin/bundle exec foreman start -m "web=1,sidekiq=1" -p 3000
+#rvm env
